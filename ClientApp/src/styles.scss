@@ -1,0 +1,174 @@
+$colorPrimary: #0696d7 ;
+$standardBorderRadius: 4px;
+
+.col-xs-6 {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (max-width: 576px) {
+  .col-xs-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+html, body {
+  height: 100%;
+}
+
+a {
+  color: #006eaf;
+  font-size: 14px;
+  line-height: 20px;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.i-back {
+  float: left;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.ad-container {
+  margin-top: 48px;
+  padding-left: 30px;
+  padding-right: 30px;
+  position: relative;
+  height: calc(100% - 47px);
+
+  .ad-footer {
+    position: relative;
+    margin-bottom: 12px;
+    margin-top: 32px;
+  }
+}
+
+.ad-container.footer-absolute {
+  .ad-footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 12px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+}
+
+.text-secondary {
+  font-size: 14px;
+  line-height: 20px;
+  color: #999999 !important;
+  margin-right: 5px;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: $colorPrimary;
+  border-color: #1861ac;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.toast-message {
+  font-size: 16px;
+  line-height: 22px;
+  left: 30px;
+  right: 30px;
+  top: 12px;
+  text-align: center;
+  position: absolute;
+  padding: 15px 5px;
+  color: #000000;
+  background: #38abdf;
+  opacity: 0.7;
+  border-radius: $standardBorderRadius;
+  font-weight: 500;
+}
+
+.icon-wrapper {
+  color: $colorPrimary;
+  cursor: pointer;
+}
+
+.ad-form {
+  .form-head {
+    font-size: 22px;
+    line-height: 28px;
+    color: #000000;
+    margin-bottom: 0;
+  }
+
+  .form-elements {
+    margin-top: 24px;
+  }
+
+  .form-group {
+    margin-bottom: 12px;
+  }
+
+  .control-label {
+    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 22px;
+    color: #3c3c3c;
+  }
+
+  input [type="text"].form-control, input [type="password"].form-control, .btn.btn-primary {
+    -moz-border-radius: $standardBorderRadius;
+    -webkit-border-radius: $standardBorderRadius;
+    border-radius: $standardBorderRadius;
+  }
+
+  input[type="text"].form-control, input[type="password"].form-control {
+    font-size: 16px;
+    line-height: 22px;
+    color: #3c3c3c;
+    height: 38px;
+    background-color: #ffffff;
+    border: 1px solid #bbbbbb;
+  }
+
+  .text-secondary {
+    color: #808080 !important;
+  }
+
+  .ad-validation-message, .ad-required-message {
+    font-size: 14px;
+    line-height: 20px;
+    color: #666666;
+    display: none;
+    background-color: #dcdcdc;
+    border: 1px solid #bbbbbb;
+    -moz-border-radius: $standardBorderRadius;
+    -webkit-border-radius: $standardBorderRadius;
+    border-radius: $standardBorderRadius;
+    padding: 10px 5px;
+  }
+}
+
+.ad-form.submitted {
+  .ad-input-invalid.form-group .ad-validation-message {
+    display: block;
+  }
+
+  .ng-invalid + .ad-required-message {
+    display: block;
+  }
+
+  input[type="text"].ng-invalid, input[type="password"].ng-invalid, .ad-input-invalid.form-group input[type="text"], .ad-input-invalid.form-group input[type="password"] {
+    border: 1px solid #ee4444;
+  }
+}
+
+.form-elements .row .col-sm-6 .control-label {
+  margin-top: 4px;
+}

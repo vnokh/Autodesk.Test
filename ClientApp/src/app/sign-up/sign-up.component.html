@@ -1,0 +1,60 @@
+
+<form class="ad-form" [ngClass]="{'submitted':ngForm.submitted == true}" #ngForm="ngForm" novalidate (submit)="signUp()">
+  <h3 class="form-head">
+    Create account
+  </h3>
+
+  <div class="form-elements">
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="form-group">
+          <label class="control-label">First name</label>
+          <input type="text" name="first-name" [(ngModel)]="user.firstName" (keydown)="user.isValid=null;" class="form-control" required />
+          <span class="ad-required-message">Please enter your first name</span>
+        </div>
+      </div>
+
+      <div class="col-xs-6">
+        <div class="form-group">
+          <label class="control-label">Last name</label>
+          <input type="text" name="last-name" [(ngModel)]="user.lastName" (keydown)="user.isValid=null;" class="form-control" required />
+          <span class="ad-required-message">Please enter your last name</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label">Username</label>
+      <input type="text" name="username" [(ngModel)]="user.username" class="form-control" required />
+      <span class="ad-required-message">Please enter a valid username</span>
+    </div>
+
+    <div class="form-group" [ngClass]="{'ad-input-valid':isUsernameMismatch === false, 'ad-input-invalid':isUsernameMismatch === true}">
+      <label class="control-label">Re-type username</label>
+      <input type="text" name="username-again" [(ngModel)]="user.confirmUsername" (keydown)="isUsernameMismatch=null;" class="form-control" required />
+      <span class="ad-required-message ad-validation-message">Please enter the same username</span>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label">Password</label>
+      <input type="password" name="password" [(ngModel)]="user.password" class="form-control" required />
+      <span class="ad-required-message">Please enter a valid password</span>
+    </div>
+
+    <div class="form-group" [ngClass]="{'ad-input-valid':isConfirmPasswordMismatch === false, 'ad-input-invalid':isConfirmPasswordMismatch === true}">
+      <label class="control-label">Re-type password</label>
+      <input type="password" name="password-again" [(ngModel)]="user.confirmPassword" (keydown)="isConfirmPasswordMismatch=null;" class="form-control" required />
+      <span class="ad-required-message">Please enter the same password</span>
+      <span class="ad-validation-message">Please enter the same password</span>
+    </div>
+
+    <div class="form-group">
+      <button class="btn-primary btn btn-block" type="submit">Create account</button>
+    </div>
+
+    <div class="form-group text-center">
+      <span class="text-secondary">Already have an account?</span>
+      <a routerLink="/sign-in">Sign in</a>
+    </div>
+  </div>
+</form>

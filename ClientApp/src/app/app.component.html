@@ -1,0 +1,12 @@
+<body>
+  <div class="container ad-container" [ngClass]="{'footer-absolute':isAbsolute}" [@routeAnimations]="prepareRoute(outlet)">
+    <div (resized)="onResized($event)" >
+      <router-outlet #outlet="outlet"></router-outlet>
+    </div>
+
+    <div class="ad-footer text-center">
+      <span class="text-secondary d-block">Your account for everything Autodesk</span>
+      <a href="">Learn more</a>
+    </div>
+  </div>
+</body>

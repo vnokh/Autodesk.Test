@@ -1,0 +1,30 @@
+<div class="toast-message" [hidden]="!toastVisible">
+  <span>
+    User is valid
+  </span>
+</div>
+
+<form class="ad-form" [ngClass]="{'submitted':ngForm.submitted == true}" #ngForm="ngForm" novalidate (submit)="signIn()">
+  <a routerLink="/sign-in" class="i-back">
+    <fa-icon [icon]="faChevronLeft"></fa-icon>
+  </a>
+
+  <h3 class="form-head text-center">
+    Welcome
+  </h3>
+  <span class="text-secondary text-center d-block">{{user.username}}</span>
+
+  <div class="form-elements">
+    <div class="form-group" [ngClass]="{'ad-input-valid':user.isValid === true, 'ad-input-invalid':user.isValid === false}">
+      <label class="control-label">Password</label>
+      <input type="password" name="username" [(ngModel)]="user.password" (keydown)="user.isValid=null;" class="form-control" required />
+      <span class="ad-required-message">Please enter a valid password</span>
+      <span class="ad-validation-message">The password is not recognized.</span>
+    </div>
+
+
+    <div class="form-group">
+      <button class="btn-primary btn btn-block" type="submit">{{isBusy ? "Verifying" : "Sign in"}}</button>
+    </div>
+  </div>
+</form>

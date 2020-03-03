@@ -1,0 +1,29 @@
+
+<div class="toast-message" [hidden]="!toastVisible">
+  <span>
+    Account created successfully
+  </span>
+</div>
+
+<form class="ad-form" [ngClass]="{'submitted':ngForm.submitted == true}" #ngForm="ngForm" novalidate (submit)="checkUserName()">
+  <h3 class="form-head">Sign in</h3>
+
+  <div class="form-elements">
+    <div class="form-group" [ngClass]="{'ad-input-valid':user.isValid === true, 'ad-input-invalid':user.isValid === false}">
+      <label class="control-label">Username</label>
+      <input type="text" name="username" [(ngModel)]="user.username" (keydown)="user.isValid=null;" class="form-control" required />
+      <span class="ad-required-message">Please enter a valid username</span>
+      <span class="ad-validation-message">The username is not recognized.</span>
+    </div>
+
+
+    <div class="form-group">
+      <button class="btn-primary btn btn-block" type="submit">{{isBusy ? "Verifying" : "Next"}}</button>
+    </div>
+
+    <div class="form-group text-center">
+      <span class="text-secondary">New to Autodesk?</span>
+      <a routerLink="/sign-up">Create Account</a>
+    </div>
+  </div>
+</form>
